@@ -1,0 +1,23 @@
+# Pi Coding Agent - Credentials & Secrets
+auth.json
+
+# Sessions (conversation history)
+sessions/
+
+# Installed packages (managed by `pi install`)
+git/
+
+# Extension manager cache
+.extmgr-cache/
+
+# Installed binaries
+bin/
+
+# Cloned skills (managed separately)
+agent/skills/pi-skills/
+
+# Node modules
+node_modules/
+
+# OS junk
+.DS_Store
