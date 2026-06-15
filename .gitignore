@@ -1,23 +1,22 @@
-# Pi Coding Agent - Credentials & Secrets
+# === Secrets — never commit ===
 auth.json
+settings.local.json
+**/credentials.json
+*.key
+*.pem
 
-# Sessions (conversation history)
+# === Runtime / machine-local state ===
 sessions/
-
-# Installed packages (managed by `pi install`)
-git/
-
-# Extension manager cache
-.extmgr-cache/
-
-# Installed binaries
+chat/
+logs/
+db/
+task_runs/
 bin/
-
-# Cloned skills (managed separately)
-agent/skills/pi-skills/
-
-# Node modules
+npm/node_modules/
 node_modules/
+*.bak-*
+*.backup-*
+agent.backup-*
 
-# OS junk
+# === OS junk ===
 .DS_Store
