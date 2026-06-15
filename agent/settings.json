@@ -1,26 +1,28 @@
 {
   "packages": [
-    "npm:pi-extmgr",
-    "git:github.com/coctostan/pi-superpowers"
+    "npm:pi-web-access",
+    "npm:@zosmaai/pi-llm-wiki",
+    "npm:pi-messenger-bridge",
+    "npm:pi-thinking-steps",
+    "npm:@touchskyer/memex",
+    "npm:context-mode",
+    "npm:pi-superpowers-plus",
+    "npm:pi-tool-display",
+    "npm:pi-blackhole",
+    "npm:pi-docparser",
+    "npm:@alasano/pi-linear"
   ],
-  "theme": "zosma-classic",
-  "thinkingLevel": "medium",
-  "autoCompact": true,
-  "steeringMode": "one-at-a-time",
-  "followUpMode": "one-at-a-time",
-  "lastChangelogVersion": "0.64.0",
+  "quietStartup": true,
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-opus-4-8",
+  "defaultThinkingLevel": "high",
   "enabledModels": [
-    "github-copilot/claude-opus-4.6",
-    "github-copilot/claude-sonnet-4.6",
-    "github-copilot/claude-sonnet-4.5",
-    "github-copilot/claude-opus-4.5",
-    "github-copilot/gemini-3-pro-preview",
-    "github-copilot/gemini-3.1-pro-preview",
-    "github-copilot/gpt-5.3-codex",
-    "github-copilot/gpt-5.4-mini"
+    "anthropic/claude-fable-5",
+    "anthropic/claude-opus-4-8",
+    "anthropic/claude-opus-4-7",
+    "razorblade/gemma-4-12b-qat-turbo",
+    "razorblade/qwopus-9b-coder",
+    "opencode-go/deepseek-v4-flash"
   ],
-  "defaultProvider": "github-copilot",
-  "defaultModel": "claude-opus-4.6",
-  "defaultThinkingLevel": "medium",
-  "hideThinkingBlock": false
+  "theme": "dark"
 }

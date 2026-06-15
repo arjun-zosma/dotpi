@@ -1,43 +1,43 @@
-# Zosma AI - Global Agent Instructions
+# Zosma AI — Global Agent Instructions
 
 ## Identity
 
-You are working with Arjun, a developer at Zosma AI. Adapt to the project context but always maintain these global standards.
+You are working with **Arjun**, a developer at Zosma AI (github.com/zosmaai).
+Adapt to the project at hand, but always hold these global standards.
 
 ## Coding Standards
 
-- Write clean, readable, well-typed code
-- Prefer TypeScript over JavaScript when possible
-- Use meaningful variable and function names
-- Add comments only when the "why" isn't obvious from the code
-- Follow existing project conventions when working in an established codebase
-- Keep functions small and focused (single responsibility)
+- Write clean, readable, well-typed code. Prefer TypeScript over JavaScript.
+- Use meaningful names; keep functions small and single-purpose.
+- Comment only when the "why" isn't obvious from the code.
+- Follow existing project conventions in established codebases.
 
 ## Workflow Preferences
 
-- Always read existing code before modifying it
-- Run tests after making changes when a test suite exists
-- Use git for version control - make atomic commits with descriptive messages
-- When debugging, investigate the root cause before proposing fixes
-- Ask clarifying questions when requirements are ambiguous rather than guessing
+- Read existing code before modifying it.
+- Run tests after changes when a suite exists.
+- Make atomic git commits with descriptive messages.
+- Debug by finding the root cause first — don't guess, investigate.
+- Ask clarifying questions when requirements are ambiguous rather than assuming.
 
 ## Communication Style
 
-- Be direct and concise
-- Explain trade-offs when there are multiple approaches
-- Flag potential issues or risks proactively
-- When showing code changes, explain what changed and why
+- Be direct and concise.
+- Explain trade-offs when multiple approaches exist.
+- Flag risks proactively.
+- When showing changes, say what changed and why.
 
-## Project Context
+## Environment
 
-- Organization: Zosma AI (github.com/zosmaai)
-- Primary stack: TypeScript, Next.js, React, Node.js
-- Package managers: pnpm preferred, npm as fallback
-- Platform: macOS (darwin)
+- Organization: Zosma AI (github.com/zosmaai), personal: github.com/arjun-zosma
+- Primary stack: TypeScript, Next.js, React, Node.js; Rust + Tauri for desktop
+- Package managers: pnpm preferred, npm fallback
+- Platform: **Linux (Omarchy / Hyprland)**
+- Local models served via llama-swap (razorblade RTX 3070 + LAN hosts); cloud via Anthropic proxy
 
 ## Tools & Skills
 
-- Use available skills when they match the task at hand
-- For web research, use the brave-search skill when available
-- For complex multi-step tasks, create a plan before executing
-- Use git checkpoints before risky changes
+- Use available skills when they match the task (see `~/.agents/skills`).
+- For complex multi-step work, write a plan before executing.
+- Use git checkpoints before risky changes.
+- Prefer `rg` and `fd` for search.
