@@ -191,7 +191,7 @@
     "zosmaai-anthropic": {
       "name": "ZosmaAI Router (Anthropic protocol @ devserver.zosma.ai:8787)",
       "baseUrl": "http://devserver.zosma.ai:8787/",
-      "apiKey": "zr-lvq6buukl32vzxe5pewyumbimf4rxtdwv266nyy",
+      "apiKey": "REPLACE_ME",
       "api": "anthropic-messages",
       "models": [
         {

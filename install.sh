@@ -58,7 +58,7 @@ fi
 mkdir -p "$PI_DIR"
 
 # --- backup existing config (only files we manage) ------------------------
-managed=(AGENTS.md settings.json models.json compact-config.json prompts themes extensions)
+managed=(AGENTS.md settings.json models.json compact-config.json prompts extensions)
 need_backup=0
 for f in "${managed[@]}"; do [[ -e "$PI_DIR/$f" ]] && need_backup=1; done
 if [[ $need_backup -eq 1 ]]; then
@@ -78,9 +78,8 @@ place() { # place <src-rel> <dest-abs>
 # --- static, version-controlled files --------------------------------------
 place agent/AGENTS.md          "$PI_DIR/AGENTS.md"
 place agent/prompts            "$PI_DIR/prompts"
-place agent/themes             "$PI_DIR/themes"
 place agent/extensions         "$PI_DIR/extensions"
-ok "installed AGENTS.md, prompts/, themes/, extensions/"
+ok "installed AGENTS.md, prompts/, extensions/"
 
 # --- settings: always COPY (pi mutates these at runtime) ------------------
 # settings.json has placeholders for pi-gmail; merge with settings.local.json if exists
