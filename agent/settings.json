@@ -1,28 +1,77 @@
 {
+  "lastChangelogVersion": "0.80.6",
   "packages": [
     "npm:pi-web-access",
-    "npm:@zosmaai/pi-llm-wiki",
+    "../../code/pi-packages/pi-tally",
+    "../../code/pi-packages/pi-llm-wiki",
     "npm:pi-messenger-bridge",
     "npm:pi-thinking-steps",
     "npm:@touchskyer/memex",
-    "npm:context-mode",
-    "npm:pi-superpowers-plus",
     "npm:pi-tool-display",
+    "npm:context-mode",
     "npm:pi-blackhole",
+    "../../pi-extensions/pi-chat",
     "npm:pi-docparser",
-    "npm:@alasano/pi-linear"
+    "npm:@alasano/pi-linear",
+    "npm:pi-supergsd",
+    "npm:pi-context-tree",
+    "npm:pi-sessions",
+    "npm:pi-extmgr",
+    "npm:pi-loadout",
+    "npm:@raquezha/noheadroom",
+    "npm:@the-forge-flow/lumen",
+    "npm:@e9n/pi-gmail",
+    "npm:pi-google-workspace",
+    "npm:@majorgilles/pi-grill-me",
+    "npm:pi-fusion",
+    "git:github.com/DietrichGebert/ponytail",
+    "npm:pi-invisible-continue",
+    "npm:@dreki-gg/pi-code-reviewer",
+    "npm:@feniix/pi-exa",
+    "npm:@ifi/oh-pi-themes",
+    "npm:pi-hashline-readmap",
+    "npm:@plannotator/pi-extension",
+    "npm:@tomooshi/caveman-milk-pi"
   ],
-  "quietStartup": true,
-  "defaultProvider": "anthropic",
-  "defaultModel": "claude-opus-4-8",
+  "quietStartup": false,
+  "defaultProvider": "zosmaai",
+  "defaultModel": "thinkingcap-27b",
   "defaultThinkingLevel": "high",
   "enabledModels": [
-    "anthropic/claude-fable-5",
-    "anthropic/claude-opus-4-8",
-    "anthropic/claude-opus-4-7",
-    "razorblade/gemma-4-12b-qat-turbo",
-    "razorblade/qwopus-9b-coder",
-    "opencode-go/deepseek-v4-flash"
+    "zosmaai-anthropic/claude-opus-4-8",
+    "zosmaai-anthropic/claude-opus-4-7",
+    "opencode-go/deepseek-v4-flash",
+    "razorblade/lfm-8b-a1b-long",
+    "opencode-go/mimo-v2.5",
+    "zosmaai/thinkingcap-27b",
+    "zosmaai/qwen3.5-4b",
+    "zosmaai/lorbus-27b",
+    "zosmaai/ornith-9b",
+    "zosmaai/prisma-aura-27b",
+    "zosmaai/sakamakismile-27b",
+    "zosmaai/tess-27b"
   ],
-  "theme": "dark"
+  "llm-wiki": {
+    "taskModel": {
+      "provider": "zosmaai",
+      "id": "qwen3.5-4b",
+      "thinking": "off"
+    }
+  },
+  "pi-gmail": {
+    "clientId": "YOUR_CLIENT_ID",
+    "clientSecret": "YOUR_CLIENT_SECRET"
+  },
+  "theme": "gruvbox-dark",
+  "extensions": [
+    "/home/arjun/code/pi-packages/pi-htn",
+    "/home/arjun/code/pi-packages/pi-hf-sync"
+  ],
+  "hideThinkingBlock": false,
+  "sessions": {
+    "autoTitle": {
+      "model": "zosmaai/qwen3.5-4b",
+      "thinkingLevel": "off"
+    }
+  }
 }

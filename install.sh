@@ -82,17 +82,38 @@ place agent/themes             "$PI_DIR/themes"
 place agent/extensions         "$PI_DIR/extensions"
 ok "installed AGENTS.md, prompts/, themes/, extensions/"
 
-# --- settings/models: always COPY (pi mutates these at runtime) ------------
-cp -a "$REPO_DIR/agent/settings.json"       "$PI_DIR/settings.json"
-cp -a "$REPO_DIR/agent/compact-config.json" "$PI_DIR/compact-config.json"
-# only drop models.json if absent or REPLACE_ME placeholder still present
+# --- settings: always COPY (pi mutates these at runtime) ------------------
+# settings.json has placeholders for pi-gmail; merge with settings.local.json if exists
+cp -a "$REPO_DIR/agent/settings.json" "$PI_DIR/settings.json"
+if [[ -f "$PI_DIR/settings.local.json" ]]; then
+  # Merge: extract pi-gmail creds from local settings and inject into settings.json
+  CLIENT_ID=$(python3 -c "import json; d=json.load(open('$PI_DIR/settings.local.json')); print(d.get('pi-gmail',{}).get('clientId',''))" 2>/dev/null || true)
+  CLIENT_SECRET=$(python3 -c "import json; d=json.load(open('$PI_DIR/settings.local.json')); print(d.get('pi-gmail',{}).get('clientSecret',''))" 2>/dev/null || true)
+  if [[ -n "$CLIENT_ID" && -n "$CLIENT_SECRET" ]]; then
+    python3 -c "
+import json
+with open('$PI_DIR/settings.json') as f:
+    cfg = json.load(f)
+cfg['pi-gmail'] = {'clientId': '$CLIENT_ID', 'clientSecret': '$CLIENT_SECRET'}
+with open('$PI_DIR/settings.json', 'w') as f:
+    json.dump(cfg, f, indent=2)
+    f.write('\n')
+"
+    ok "merged pi-gmail credentials from settings.local.json"
+  fi
+fi
+
+# --- models.json: only if absent or has REPLACE_ME placeholder ---------------
 if [[ ! -f "$PI_DIR/models.json" ]] || grep -q '"REPLACE_ME"' "$PI_DIR/models.json" 2>/dev/null; then
   cp -a "$REPO_DIR/agent/models.json" "$PI_DIR/models.json"
   ok "installed models.json (set apiKey for your proxy — see checklist)"
 else
   warn "kept your existing models.json (has real apiKeys)"
 fi
-ok "installed settings.json, compact-config.json"
+
+# --- compact-config.json ---------------------------------------------------
+cp -a "$REPO_DIR/agent/compact-config.json" "$PI_DIR/compact-config.json" 2>/dev/null || true
+ok "installed settings.json, models.json, compact-config.json"
 
 # --- local secrets overlay -------------------------------------------------
 if [[ ! -f "$PI_DIR/settings.local.json" ]]; then
