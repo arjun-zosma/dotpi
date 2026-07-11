@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Portable agent config: prompts, themes, extensions, model providers, compact-config, and skills. Installer copies into `~/.pi/agent/` and `~/.agents/skills/`.
+Portable agent config: prompts, packages, model providers, compact-config, and skills. Installer copies into `~/.pi/agent/` and `~/.agents/skills/`.
 
 ## Structure
 
@@ -18,9 +18,7 @@ dotpi/
 │   ├── settings.local.json # Per-machine secrets template (gmail oauth, etc.)
 │   ├── models.json         # Custom providers (local llama-swap + LAN + proxy)
 │   ├── compact-config.json # Context-window compaction thresholds
-│   ├── extensions/         # Pi extensions (double-escape.ts)
-│   ├── prompts/            # Reusable prompt templates
-│   └── themes/             # Themes (zosma-classic, zosma-dark, zosma-cyber)
+│   └── prompts/            # Reusable prompt templates
 ├── skills/                 # Standalone skills (copied to ~/.agents/skills/)
 ├── install.sh              # Bootstrap installer
 ├── sync-from-live.sh       # Sync live config back to repo
@@ -35,10 +33,11 @@ dotpi/
 2. `skills/` are copies — not symlinks. Changes here need reinstall or manual copy to propagate.
 3. Never commit secrets. `settings.local.example.json` is the template; real secrets go in `~/.pi/agent/`.
 4. After editing `agent/settings.json`, user needs to restart pi for package changes to take effect.
-5. Theme changes in `agent/themes/` apply on next pi launch or via in-app theme switch.
-6. New skills go in `skills/<name>/SKILL.md` — installer copies to `~/.agents/skills/`.
-7. When live config diverges, run `sync-from-live.sh` to pull changes back to repo.
-8. `sync-from-live.sh` sanitizes gmail credentials automatically — safe to commit after sync.
+5. Themes come from packages (e.g. `@ifi/oh-pi-themes`). Set `"theme"` in `settings.json` — don't commit theme files.
+6. Extensions come from packages. Don't commit `agent/extensions/` — just list packages in `settings.json`.
+7. New skills go in `skills/<name>/SKILL.md` — installer copies to `~/.agents/skills/`.
+8. When live config diverges, run `sync-from-live.sh` to pull changes back to repo.
+9. `sync-from-live.sh` sanitizes gmail credentials automatically — safe to commit after sync.
 
 ## Key Commands
 
