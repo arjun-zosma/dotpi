@@ -4,6 +4,11 @@ settings.local.json
 **/credentials.json
 *.key
 *.pem
+pi-cache-optimizer-stats.json
+pi-vcc-config.json
+trust.json
+cowork-extensions.json
+little-coder-prompt-history.json
 
 # === Runtime / machine-local state ===
 sessions/
@@ -14,6 +19,9 @@ task_runs/
 bin/
 npm/node_modules/
 node_modules/
+pi-sessions/
+pi-blackhole/
+pi-cache-optimizer-stats.json
 *.bak-*
 *.backup-*
 agent.backup-*
