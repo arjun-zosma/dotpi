@@ -80,8 +80,8 @@ dotpi/
 ### Providers
 
 `models.json` defines three providers — read [MODEL_SETUP.md](MODEL_SETUP.md) for full details:
-- **zosmaai** — llama-swap on devserver (`YOUR_SERVER:8000`), ThinkingCap / Qwen / Lorbus / Ornith / Prisma / SakamakiSmile / Tess.
-- **zosmaai-anthropic** — Anthropic router (`YOUR_SERVER:8787`), Claude Opus 4.7/4.8.
+- **zosmaai** — llama-swap on LAN server (`YOUR_INTERNAL_SERVER:8000`), ThinkingCap / Qwen / Lorbus / Ornith / Prisma / SakamakiSmile / Tess.
+- **zosmaai-anthropic** — Anthropic router (`YOUR_INTERNAL_SERVER:8787`), Claude Opus 4.7/4.8.
 - **razorblade** — local llama-swap on RTX 3070 (`127.0.0.1:8080`), Gemma / DeepSeek / Qwopus / LFM.
 
 ## Secrets (never committed)

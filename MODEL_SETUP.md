@@ -13,8 +13,8 @@ claude-opus-4.x          ──heavy lifting────────────
 | Provider | Host | API | Purpose |
 |----------|------|-----|---------|
 | **razorblade** | `127.0.0.1:8080` | openai-completions | Local RTX 3070, fast experimentation |
-| **zosmaai** | `YOUR_SERVER:8000` | openai-completions | LAN llama-swap, main workhorse |
-| **zosmaai-anthropic** | `YOUR_SERVER:8787` | anthropic-messages | Claude Opus for heavy reasoning |
+| **zosmaai** | `YOUR_INTERNAL_SERVER:8000` | openai-completions | LAN llama-swap, main workhorse |
+| **zosmaai-anthropic** | `YOUR_INTERNAL_SERVER:8787` | anthropic-messages | Claude Opus for heavy reasoning |
 
 ## Models
 
@@ -71,8 +71,8 @@ Defines all providers and their models. Copied by `install.sh`. No secrets (uses
 
 1. **`auth.json`** — run `pi`, then `/login` to set provider API keys
 2. **`apiKey` in `models.json`** — replace `REPLACE_ME` with your Anthropic proxy key
-3. **llama-swap running** — both `127.0.0.1:8080` (local) and `YOUR_SERVER:8000` (LAN) need llama-swap running with the right models loaded
-4. **Anthropic router** — `YOUR_SERVER:8787` needs the Anthropic protocol router running
+3. **llama-swap running** — both `127.0.0.1:8080` (local) and `YOUR_INTERNAL_SERVER:8000` (LAN) need llama-swap running with the right models loaded
+4. **Anthropic router** — `YOUR_INTERNAL_SERVER:8787` needs the Anthropic protocol router running
 
 ## Usage Pattern
 

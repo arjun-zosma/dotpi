@@ -189,8 +189,8 @@
       ]
     },
     "zosmaai-anthropic": {
-      "name": "ZosmaAI Router (Anthropic protocol @ ANTHROPIC-ROUTER-HOST:8787)",
-      "baseUrl": "http://ANTHROPIC-ROUTER-HOST:8787/",
+      "name": "ZosmaAI Router (Anthropic protocol @ YOUR_INTERNAL_SERVER)",
+      "baseUrl": "http://YOUR_INTERNAL_SERVER:8787/",
       "apiKey": "REPLACE_ME",
       "api": "anthropic-messages",
       "models": [
@@ -231,8 +231,8 @@
       ]
     },
     "zosmaai": {
-      "name": "ZosmaAI (llama-swap @ LLAMA-SWAP-HOST:8000)",
-      "baseUrl": "http://LLAMA-SWAP-HOST:8000/v1",
+      "name": "ZosmaAI (llama-swap @ YOUR_INTERNAL_SERVER)",
+      "baseUrl": "http://YOUR_INTERNAL_SERVER:8000/v1",
       "api": "openai-completions",
       "apiKey": "sk-local",
       "compat": {
