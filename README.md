@@ -5,7 +5,7 @@ My personal [pi](https://github.com/badlogic/pi-mono/tree/main/packages/coding-a
 Configs, prompts, model providers, and skills. No secrets in the repo; the installer wires everything up and leaves a checklist for the bits that are machine-local.
 
 
-![Pi in action](assets/screenshot-2026-07-09_18-00-03.png)
+![Pi in action](assets/screenshot.png)
 ## One-command install
 
 ```bash
